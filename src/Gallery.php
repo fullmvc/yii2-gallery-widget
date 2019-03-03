@@ -86,9 +86,10 @@ class Gallery extends Widget
         if (empty($this->items)) {
             return null;
         }
-        echo $this->renderItems();
-        echo $this->renderTemplate();
+        $result = $this->renderItems() . $this->renderTemplate();
         $this->registerClientScript();
+        
+        return $result;
     }
 
     /**
